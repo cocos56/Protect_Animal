@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="45" height="10" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="plain" tilewidth="64" tileheight="64">
+  <image source="plain.png" width="2880" height="640"/>
+ </tileset>
+ <tileset firstgid="451" name="animal4" tilewidth="64" tileheight="64">
+  <image source="animal4.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="452" name="zh" tilewidth="64" tileheight="64">
+  <image source="zh.png" width="192" height="64"/>
+ </tileset>
+ <tileset firstgid="455" name="meta" tilewidth="64" tileheight="64">
+  <image source="meta.png" width="128" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Collidable" value=""/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Collection" value=""/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="plain" width="45" height="10">
+  <data encoding="base64" compression="zlib">
+   eJwNwwO0EAYAAMAff7Zt27Zt27ZdP9u2bdu2awtb2LKN7d67CxYQEBDcEIY0lKENNIxhDWd4IxjRSEY2ilGNZnRjGNNYxjaOcY1nfBOY0EQmNolJTWZyU5jSVKY2jWlNZ3ozmNFMZjaLWc1mdnOY01zmNo95zWd+C1jQQha2iEUtZnFLWNJSlraMZS1neStY0UpWtopVrWZ1a1jTWta2jnWtZ30b2NBGNraJTW1mc1vY0la2to1tbWd7O9jRTna2i13tZnd72NNe9raPfe1nfwc40EEOdohDHWaQwx3hSEc52jGOdZzjneBEJznZKU51mtOd4UxnOds5znWe813gQhe52CUudZnLXeFKV7naNa51nevd4EY3udktbnWb293hTne52z3udZ/7PeBBD3nYIx71mMc94UlPedoznvWc573gRS952Ste9ZrXveFNb3nbO971D//0nvd94EP/8m8f+dgnPvUf//WZz33hS1/52je+9Z3v/eBHP/nZL371m9/94U9/+dv/DAiGwQ1hSEMZ2kDDGNZwhjeCEY1kZKMY1WhGN4YxjWVs4xjXeMY3gQlNZGKTmNRkJjeFKU1latOY1nSmN4MZzWRms5jVbGY3hznNZW7zmNd85reABS1kYYtY1GIWt4QlLWVpy1jWcpa3ghWtZGWrWNVqVreGNa1lbetY13rWt4ENbWRjm9jUZja3hS1tZWvb2NZ2treDHe1kZ7vY1W52t4c97WVv+9jXfvZ3gAMd5GCHONRhBjncEY50lKMd41jHOd4JTnSSk53iVKc53RnOdJazneNc5znfBS50kYtd4lKXudwVrnSVq13jWte53g1udJOb3eJWt7ndHe50l7vd4173ud8DHvSQhz3iUf8H5yLKJw==
+  </data>
+ </layer>
+ <layer name="zh" width="45" height="10">
+  <properties>
+   <property name="zh" value="ture"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJw7wshAEBxhxI8p1U9tcwiZNxDuQQZHGSEYxiYFoKsnVT8+85DZxPh/sAFau/kYDcwfdTMmGAg3U5qPSAXE5GNsbqZG+UcMINceepXtlPgZmz4A78td8w==
+  </data>
+ </layer>
+ <objectgroup name="hero">
+  <object name="pa" x="36.3636" y="239.394"/>
+  <object name="enemy" x="2715.15" y="296.97"/>
+  <object name="enemy" x="2518.18" y="348.485"/>
+  <object name="enemy" x="2263.64" y="206.061"/>
+  <object name="enemy" x="2145.45" y="457.576"/>
+  <object name="enemy" x="1966.67" y="215.152"/>
+  <object name="enemy" x="1806.06" y="466.667"/>
+  <object name="enemy" x="1830.3" y="336.364"/>
+  <object name="enemy" x="1572" y="230"/>
+  <object name="enemy" x="1306" y="484"/>
+  <object name="enemy" x="1064" y="470"/>
+  <object name="enemy" x="1106" y="214"/>
+  <object name="enemy" x="1320" y="232"/>
+  <object name="enemy" x="1374" y="228"/>
+  <object name="enemy" x="1480" y="468"/>
+  <object name="enemy" x="1570" y="490"/>
+  <object name="enemy" x="1630" y="416"/>
+ </objectgroup>
+ <layer name="animal" width="45" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFAwUOM6LSpOrDxSfHHHLNGAWDFwyVOB1odw6U/dTKx8SaTysw0PFHDQAAAnkJ9Q==
+  </data>
+ </layer>
+ <layer name="meta" width="45" height="10">
+  <data encoding="base64" compression="zlib">
+   eJw7zshAEBxnxI8p1U9tcwiZNxDuwabvBBJNLEBXT6p+ZHACyW0n0NxJjP9h6ohVS2tAqptJjTta+JOWbkaP08HqZnLTHrXcTKtwwgeIycfY3ERKGiC3XKDEHnqV7eTag8suAJ33hm4=
+  </data>
+ </layer>
+</map>

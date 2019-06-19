@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="45" height="10" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="sky" tilewidth="64" tileheight="64">
+  <image source="sky.jpg" width="1680" height="1020"/>
+ </tileset>
+ <tileset firstgid="391" name="animal3" tilewidth="64" tileheight="64">
+  <image source="animals3.png" width="400" height="400"/>
+ </tileset>
+ <tileset firstgid="427" name="meta" tilewidth="64" tileheight="64">
+  <image source="meta.png" width="128" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Collidable" value=""/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Collection" value=""/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="sky" width="45" height="10">
+  <data encoding="base64" compression="zlib">
+   eJzt1LVWA0EUxvHdCnenxb3JW+HuJU4KvMRdepzgbxDceQPgHJw/h5nDMkwgpICG4lfs3ZuZb+/Mic0wDNu/X5GNHOQiD/koQCGKUIxBDGEYIxjFGMYxgUlMYfqHvTOWPUpQijKUowKVqEI1alArMtehHg1oRBOa0YJW2LGIJSwjFg6sYg3r2MAmtpTeFdGvkr3bLt63oR0d6EQXutEjMveiD/0YcDEnp7LmPg6U2glORe8OdrFn6T3EkdJ7Jp6/Ogv1e14zz2IO81jQzMkhavI3sibnrM5O/WbdHK1347tz02XWrSnJOTk1NTk7dc66u+FuHulYOYtzXODSjcxXuMaNUr+Dj/mxFsBzoPn5bujWtebRvb8Ve9zjAY94wrPI7MU+3uZbBl/4wd98zxCEYIQgFGEIRxzikYBEJCEZKUhFGtKRgUxkebBHBCIRhWjEmH//P+uJF0+oq70=
+  </data>
+ </layer>
+ <objectgroup name="hero">
+  <object name="pa" x="139.394" y="181.818" width="36.3636" height="39.3939"/>
+  <object name="enemy" x="2396.97" y="284.848" width="24.2424" height="21.2121"/>
+  <object name="enemy" x="2448.48" y="348.485"/>
+  <object name="enemy" x="2469.7" y="436.364"/>
+  <object name="enemy" x="2030.3" y="187.879"/>
+  <object name="enemy" x="1993.94" y="409.091"/>
+  <object name="enemy" x="1718.18" y="406.061"/>
+  <object name="enemy" x="2209.09" y="542.424"/>
+  <object name="enemy" x="2557.58" y="533.333"/>
+  <object name="enemy" x="1415.15" y="478.788"/>
+  <object name="enemy" x="1330.3" y="233.333"/>
+  <object name="enemy" x="1030.3" y="403.03"/>
+  <object name="enemy" x="969.697" y="539.394"/>
+  <object name="enemy" x="1557.58" y="318.182"/>
+ </objectgroup>
+ <layer name="animal" width="45" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgxV0MhJW00GEGkKgiwpmjCTQTsfwoqVd1Eg71LCTmHROLqCl2QMB6BFnI7E8AAAe9gXp
+  </data>
+ </layer>
+ <layer name="meta" width="45" height="10">
+  <data encoding="base64" compression="zlib">
+   eJztlMsNACAIQ3X/UXRIr6ZpQou/i024GOBVgrZaSvtxJVx1oUbJyfbIeHZrojm5c3T4rKfCwXkxzyo3w2L5UR/G7HBv17O66/MZMtEH1rl+UIzneHZ34/Q+73jvkVYZr//ZTAwWh5tA
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<dict>
+   <key>time</key>
+   <string>时间:</string>
+   <key>la1</key>
+   <string>可回收:</string>
+   <key>la2</key>
+   <string>不可回收:</string>
+   <key>la3</key>
+   <string>可回收+1</string>
+   <key>la4</key>
+   <string>不可回收+1</string>
+   <key>win</key>
+   <string>恭喜您，胜利！</string>
+   <key>score</key>
+   <string>得分：</string>
+</dict>
