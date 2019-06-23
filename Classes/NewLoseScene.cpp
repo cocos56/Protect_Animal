@@ -39,15 +39,15 @@ bool NewLoseScene::init()
 	this->addChild(menu);
 
 	auto dic = Dictionary::createWithContentsOfFile("text.xml");
-	auto str = (__String *)(dic->objectForKey("score"));
-	auto Notrecoverable = Label::createWithTTF(str->getCString(), QE_Font, 40);
+	auto str = (String *)(dic->objectForKey("score"));
+	auto Notrecoverable = Label::create(str->getCString(), QE_Font, 40);
 	Notrecoverable->setPosition(Vec2(size.width / 2 -30, size.height / 2 +160));
 	Notrecoverable->setColor(Color3B(225, 225, 0));
 	this->addChild(Notrecoverable);
 
 	int score = UserDefault::getInstance()->getIntegerForKey("score_");
-	auto strsss = __String::createWithFormat("%d", score);
-	auto labls = Label::createWithTTF(strsss->getCString(), QE_Font, 40);
+	auto strsss = String::createWithFormat("%d", score);
+	auto labls = Label::create(strsss->getCString(), QE_Font, 40);
 	labls->setPosition(Vec2(size.width / 2 +30 , size.height / 2 + 160));
 	labls->setColor(Color3B(225, 225, 0));
 	this->addChild(labls);

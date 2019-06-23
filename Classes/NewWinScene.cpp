@@ -40,7 +40,7 @@ bool NewWinScene::init()
 
 	auto dic = Dictionary::createWithContentsOfFile("text.xml");
 	auto str3 = (__String *)(dic->objectForKey("win"));
-	auto Notrecoverable = Label::createWithTTF(str3->getCString(), QE_Font, 40);
+	auto Notrecoverable = Label::create(str3->getCString(), QE_Font, 40);
 	Notrecoverable->setPosition(Vec2(size.width / 2 , size.height/2 +140));
 	Notrecoverable->setColor(Color3B(225,225,0));
 	this->addChild(Notrecoverable);

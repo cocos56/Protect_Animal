@@ -25,7 +25,7 @@
 
 cmake_minimum_required(VERSION 3.6)
 
-set(APP_NAME animal)
+set(APP_NAME Protect_Animal)
 
 project(${APP_NAME})
 
