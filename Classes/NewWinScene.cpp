@@ -1,5 +1,8 @@
+﻿#pragma execution_character_set("utf-8")
+
+#include "QE.h"
 #include "NewWinScene.h"
-#include "HelloWorldScene.h"
+#include "gameScene.h"
 #include "Level.h"
 Scene* NewWinScene::createScene()
 {
@@ -37,7 +40,7 @@ bool NewWinScene::init()
 
 	auto dic = Dictionary::createWithContentsOfFile("text.xml");
 	auto str3 = (__String *)(dic->objectForKey("win"));
-	auto Notrecoverable = Label::createWithTTF(str3->getCString(), "fonts/youyuan.ttf", 40);
+	auto Notrecoverable = Label::createWithTTF(str3->getCString(), QE_Font, 40);
 	Notrecoverable->setPosition(Vec2(size.width / 2 , size.height/2 +140));
 	Notrecoverable->setColor(Color3B(225,225,0));
 	this->addChild(Notrecoverable);
@@ -46,7 +49,7 @@ bool NewWinScene::init()
 }
 void NewWinScene::repeat()
 {
-	Scene *scene = HelloWorld::createScene();
+	Scene *scene = gameScene::createScene();
 	Director::getInstance()->replaceScene(scene);
 }
 void NewWinScene::menus()

@@ -1,3 +1,5 @@
+ï»¿#pragma execution_character_set("utf-8")
+
 #include "StartScene.h"
 #include "ui/CocosGUI.h"
 using namespace ui;
@@ -5,13 +7,13 @@ using namespace ui;
 #include "Level.h"
 using namespace CocosDenshion;
 
-//´´½¨³¡¾°sceneºÍ²ãlayer
+//åˆ›å»ºåœºæ™¯sceneå’Œå±‚layer
 Scene* StartScene::createScene()
 {
 	Scene* scene = Scene::create();
 	Layer* layer = StartScene::create();
-	scene->addChild(layer); //½«²ã¼ÓÔØµ½³¡¾°ÉÏ
-	return scene; //·µ»ØÒ»¸ö´ø²ãµÄ³¡¾°
+	scene->addChild(layer); //å°†å±‚åŠ è½½åˆ°åœºæ™¯ä¸Š
+	return scene; //è¿”å›žä¸€ä¸ªå¸¦å±‚çš„åœºæ™¯
 }
 bool StartScene::init()
 {
@@ -20,7 +22,7 @@ bool StartScene::init()
 		return false;
 	}
 	
-	//Directorµ¥Àý£¬Õû¸öÓÎÏ·Ö»ÓÐÒ»¸öµ¼ÑÝÔÚ¿ØÖÆÓÎÏ·
+	//Directorå•ä¾‹ï¼Œæ•´ä¸ªæ¸¸æˆåªæœ‰ä¸€ä¸ªå¯¼æ¼”åœ¨æŽ§åˆ¶æ¸¸æˆ
 	size = Director::getInstance()->getWinSize();
 
 
@@ -30,7 +32,7 @@ bool StartScene::init()
 	bg->setScale(scaleX,scaleY);
 	bg->setPosition(Vec2(size.width/2,size.height/2));
 	this->addChild(bg);
-	//´´½¨¡°¿ªÊ¼ÓÎÏ·£¬ÓÎÏ·ÉèÖÃºÍÓÎÏ·°ïÖú¡±Èý¸ö²Ëµ¥Ñ¡Ïî£¨ÓÃÍ¼Æ¬´´½¨Item£©
+	//åˆ›å»ºâ€œå¼€å§‹æ¸¸æˆï¼Œæ¸¸æˆè®¾ç½®å’Œæ¸¸æˆå¸®åŠ©â€ä¸‰ä¸ªèœå•é€‰é¡¹ï¼ˆç”¨å›¾ç‰‡åˆ›å»ºItemï¼‰
 	auto startButton = MenuItemImage::create("play.png","play.png",CC_CALLBACK_0(StartScene::start,this));
 	startButton->setPosition(Vec2(size.width/2,size.height/2+70));
 	auto setButton = MenuItemImage::create("set.png","set.png",CC_CALLBACK_0(StartScene::setLayer,this));
@@ -38,44 +40,44 @@ bool StartScene::init()
 	auto helpButton = MenuItemImage::create("help.png","help.png",CC_CALLBACK_0(StartScene::helpLayer,this));
 	helpButton->setPosition(Vec2(size.width/2,size.height/2-150));
 
-	//´´½¨²Ëµ¥£¬°ÑÉÏÃæ´´½¨µÄÈý¸ö²Ëµ¥ÏîÌí¼Óµ½²Ëµ¥ÖÐ
+	//åˆ›å»ºèœå•ï¼ŒæŠŠä¸Šé¢åˆ›å»ºçš„ä¸‰ä¸ªèœå•é¡¹æ·»åŠ åˆ°èœå•ä¸­
 	menu = Menu::create(startButton,setButton,helpButton,NULL);
 	menu->setPosition(Vec2::ZERO);
-	//°Ñ²Ëµ¥Ìí¼Óµ½µ±Ç°²ãÖÐ
+	//æŠŠèœå•æ·»åŠ åˆ°å½“å‰å±‚ä¸­
 	this->addChild(menu);
 
-	//Ìí¼Ó²¢²¥·Åºûµû·ÉÎèµÄ¶¯»­
+	//æ·»åŠ å¹¶æ’­æ”¾è´è¶é£žèˆžçš„åŠ¨ç”»
 	//startAnimate();
 
-	//ÔÚµ±Ç°²ãÖÐÌí¼ÓÑ©»¨Æ®ÂäµÄÀë×ÓÐ§¹û
+	//åœ¨å½“å‰å±‚ä¸­æ·»åŠ é›ªèŠ±é£˜è½çš„ç¦»å­æ•ˆæžœ
 	auto snow = ParticleSnow::create();
 	snow->setPosition(Vec2(size.width/2,size.height));
 	this->addChild(snow);
 
-	//²¥·ÅÒôÀÖ£¨Ç°Ìá°üº¬Í·ÎÄ¼þ£¬ÃüÃû¿Õ¼ä£¬ÊÇ¸öµ¥Àý£©
+	//æ’­æ”¾éŸ³ä¹ï¼ˆå‰æåŒ…å«å¤´æ–‡ä»¶ï¼Œå‘½åç©ºé—´ï¼Œæ˜¯ä¸ªå•ä¾‹ï¼‰
 	SimpleAudioEngine::getInstance()->playBackgroundMusic("backmusic.mp3");
 	
 	return true;
 }
-//¡°¿ªÊ¼ÓÎÏ·¡±²Ëµ¥µÄ»Øµ÷º¯Êý£¬µã»÷¼´¿É½øÈëÑ¡Ôñ½ÇÉ«Ñ¡Ôñ¹Ø¿¨½çÃæ
+//â€œå¼€å§‹æ¸¸æˆâ€èœå•çš„å›žè°ƒå‡½æ•°ï¼Œç‚¹å‡»å³å¯è¿›å…¥é€‰æ‹©è§’è‰²é€‰æ‹©å…³å¡ç•Œé¢
 void StartScene::start( )
 {
 	log("start");
 	Scene *scene=SelectLevel::createScene();
 	Director::getInstance()->replaceScene(scene);
 }
-//ÉèÖÃ²Ëµ¥µÄ»Øµ÷º¯Êý£¬ÆäÖÐÌí¼Ó±³¾°ÒôÀÖºÍÒôÁ¿´óÐ¡µÄ¿ØÖÆºÍok°´Å¥
+//è®¾ç½®èœå•çš„å›žè°ƒå‡½æ•°ï¼Œå…¶ä¸­æ·»åŠ èƒŒæ™¯éŸ³ä¹å’ŒéŸ³é‡å¤§å°çš„æŽ§åˆ¶å’ŒokæŒ‰é’®
 void StartScene::setLayer( )
 {
-	//½øÈë»Øµ÷½çÃæÒªÇóÔ­À´µÄ²Ëµ¥²»¿ÉÓÃ
+	//è¿›å…¥å›žè°ƒç•Œé¢è¦æ±‚åŽŸæ¥çš„èœå•ä¸å¯ç”¨
 	menu->setEnabled(false);
 	
-	//Ìí¼ÓÉèÖÃÃæ°å
+	//æ·»åŠ è®¾ç½®é¢æ¿
 	setBg = Sprite::create("mianban.png");
 	setBg->setPosition(Vec2(size.width/2,100));
 	this->addChild(setBg);
 
-	//ÒôÀÖ¿ØÖÆµÄ¿ª¹Ø²Ëµ¥
+	//éŸ³ä¹æŽ§åˆ¶çš„å¼€å…³èœå•
 	auto onMusic = MenuItemImage::create("duihao1.png","duihao1.png");
 	auto offMusic = MenuItemImage::create("duihao2.png","duihao2.png");
 	//auto Music = MenuItemToggle::create(onMusic);
@@ -98,31 +100,31 @@ void StartScene::setLayer( )
 	okButton->setPosition(Vec2(setBg->getContentSize().width/2,100));
 	setBg->addChild(okButton);
 
-	//¡°¶ÔºÅ¡±²Ëµ¥Ç°ÃæµÄMusic±êÇ©Music
+	//â€œå¯¹å·â€èœå•å‰é¢çš„Musicæ ‡ç­¾Music
 	Label* MusicLabel = Label::createWithSystemFont("Music","",30);
 	MusicLabel->setColor(Color3B::BLUE);
 	MusicLabel->setPosition(Vec2(setBg->getContentSize().width/2-100,setBg->getContentSize().height/2+100));
 	setBg->addChild(MusicLabel);
 
-	////ÒôÐ§¿ØÖÆ¿ª¹Ø²Ëµ¥
+	////éŸ³æ•ˆæŽ§åˆ¶å¼€å…³èœå•
 	//auto onEffect = MenuItemImage::create("duihao1.png","duihao1.png");
 	//auto offEffect = MenuItemImage::create("duihao2.png","duihao2.png");
 	//auto Effect = MenuItemToggle::create(onEffect);
 	//Effect->addSubItem(offEffect);
-	////ÉÏÃæÁ½ÌõÓï¾ä¿ÉÒÔÓÃÌæ»»auto Effect = MenuItemToggle::create(onEffect£¬offEffect£¬NULL);
+	////ä¸Šé¢ä¸¤æ¡è¯­å¥å¯ä»¥ç”¨æ›¿æ¢auto Effect = MenuItemToggle::create(onEffectï¼ŒoffEffectï¼ŒNULL);
 	//Effect->setCallback(CC_CALLBACK_1(StartScene::setEffect,this));
 	//Effect->setPosition(Vec2(setBg->getContentSize().width/2+150,setBg->getContentSize().height/2+100));
 	//auto menu2 = Menu::create(Effect,NULL);
 	//menu2->setPosition(Vec2::ZERO);
 	//setBg->addChild(menu2);
 
-	////¡°¶ÔºÅ¡±²Ëµ¥Ç°ÃæµÄ±êÇ©Effect
+	////â€œå¯¹å·â€èœå•å‰é¢çš„æ ‡ç­¾Effect
 	//Label* EffectLable = Label::createWithSystemFont("Effect","",30);
 	//EffectLable->setColor(Color3B::BLUE);
 	//EffectLable->setPosition(Vec2(setBg->getContentSize().width/2+60,setBg->getContentSize().height/2+100));
 	//setBg->addChild(EffectLable);
 
-	//Ìí¼Ó»¬¶¯Ìõ
+	//æ·»åŠ æ»‘åŠ¨æ¡
 	auto slider=Slider::create();
 	slider->loadBarTexture("SliderBar.png");
 	slider->loadSlidBallTextures("aaa.png","aaa.png","aaa.png");
@@ -130,33 +132,33 @@ void StartScene::setLayer( )
 	slider->setScale9Enabled(true);
 	slider->setContentSize(Size(Vec2(300,40)));
 	slider->setPercent(50);
-	slider->addEventListener(CC_CALLBACK_1(StartScene::adjustVolumn,this)); //»¬¶¯ÌõµÄ¼àÌý»Øµ÷£¬Ê±¿Ì¼ì²â»¬¶¯ÌõµÄÖµµÃ¸Ä±ä
+	slider->addEventListener(CC_CALLBACK_1(StartScene::adjustVolumn,this)); //æ»‘åŠ¨æ¡çš„ç›‘å¬å›žè°ƒï¼Œæ—¶åˆ»æ£€æµ‹æ»‘åŠ¨æ¡çš„å€¼å¾—æ”¹å˜
 	setBg->addChild(slider);
-	//Ìí¼ÓÍêÉèÖÃ½çÃæÄÚÈÝºó£¬ÈÃËü´Ó100µÄÎ»ÖÃÒÆ¶¯µ½½çÃæµÄÖÐÑë
+	//æ·»åŠ å®Œè®¾ç½®ç•Œé¢å†…å®¹åŽï¼Œè®©å®ƒä»Ž100çš„ä½ç½®ç§»åŠ¨åˆ°ç•Œé¢çš„ä¸­å¤®
 	MoveTo* moveTo = MoveTo::create(0.5,Vec2(size.width/2,size.height/2));
 	setBg->runAction(moveTo);
 }
-//µ÷ÕûÒôÁ¿
+//è°ƒæ•´éŸ³é‡
 void StartScene::adjustVolumn(Ref * sender)
 {
 	Slider *slider=(Slider *)sender;
 	log("%d",slider->getPercent());
-	//»¬¶¯ÌõµÄÖµÎª0-100Ö®¼äµÄÕûÊý£¬¶øÒôÁ¿ÉèÖÃµÄÖµÔÚ0-1Ö®¼ä¡£¹ÊÐèÒª³ýÒÔ100.
+	//æ»‘åŠ¨æ¡çš„å€¼ä¸º0-100ä¹‹é—´çš„æ•´æ•°ï¼Œè€ŒéŸ³é‡è®¾ç½®çš„å€¼åœ¨0-1ä¹‹é—´ã€‚æ•…éœ€è¦é™¤ä»¥100.
 	SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(slider->getPercent()/100);
 }
 
-//RefÊÇËùÓÐÀàµÄÒ»¸ö¸¸Àà
+//Refæ˜¯æ‰€æœ‰ç±»çš„ä¸€ä¸ªçˆ¶ç±»
 void StartScene::setBack( )
 {
-	//ÉèÖÃÀï È·¶¨ °´Å¥
+	//è®¾ç½®é‡Œ ç¡®å®š æŒ‰é’®
 	menu->setEnabled(true);
 	setBg->removeFromParent();
 }
-//ÉèÖÃÒôÀÖµÄ¿ª¹Ø×´Ì¬£¬¿ØÖÆÒôÀÖµÄ²¥·ÅºÍÔÝÍ£
+//è®¾ç½®éŸ³ä¹çš„å¼€å…³çŠ¶æ€ï¼ŒæŽ§åˆ¶éŸ³ä¹çš„æ’­æ”¾å’Œæš‚åœ
 void StartScene::setMusic(Ref* sender)
 {
 	MenuItemToggle *toggle=(MenuItemToggle *)sender;
-	//»ñÈ¡²Ëµ¥×éµÄÏÂ±ê£¨0--off£¬ 1--on£©
+	//èŽ·å–èœå•ç»„çš„ä¸‹æ ‡ï¼ˆ0--offï¼Œ 1--onï¼‰
 	if(toggle->getSelectedIndex( )==1)
 	{
 		SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
@@ -166,14 +168,14 @@ void StartScene::setMusic(Ref* sender)
 		SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 	}
 }
-//ÉèÖÃÒôÐ§µÄ¿ª¹Ø×´Ì¬£¬²¢°ÑÕâ¸ö×´Ì¬´æ·Åµ½»º´æUserDefault.xmlÎÄ¼þÖÐ£¬ÒÔ±¸ÐèÒªÊ±²¥·ÅÒôÐ§¡£
+//è®¾ç½®éŸ³æ•ˆçš„å¼€å…³çŠ¶æ€ï¼Œå¹¶æŠŠè¿™ä¸ªçŠ¶æ€å­˜æ”¾åˆ°ç¼“å­˜UserDefault.xmlæ–‡ä»¶ä¸­ï¼Œä»¥å¤‡éœ€è¦æ—¶æ’­æ”¾éŸ³æ•ˆã€‚
 //void StartScene::setEffect(Ref* sender)
 //{
 //	MenuItemToggle *toggle=(MenuItemToggle *)sender;
 //	if(toggle->getSelectedIndex( )==1 )
 //	{
-//		/*³¤ÆÚ±£´æµÄÊý¾Ý£¬ÐèÒª´æµ½json»òxmlÎÄ¼þ£¬ÔÝÊ±±£´æµÄ¿É´æµ½»º´æuserdefault.xmlÎÄ¼þÖÐ£¬
-//		ÕâÀï±£´æÔÝÊ±µÄÒôÐ§×´Ì¬£¬ÏÂ´ÎÔÙÍæÓÎÏ·Ê±¸øÕâ¸öÊý¾ÝÎÞ¹Ø
+//		/*é•¿æœŸä¿å­˜çš„æ•°æ®ï¼Œéœ€è¦å­˜åˆ°jsonæˆ–xmlæ–‡ä»¶ï¼Œæš‚æ—¶ä¿å­˜çš„å¯å­˜åˆ°ç¼“å­˜userdefault.xmlæ–‡ä»¶ä¸­ï¼Œ
+//		è¿™é‡Œä¿å­˜æš‚æ—¶çš„éŸ³æ•ˆçŠ¶æ€ï¼Œä¸‹æ¬¡å†çŽ©æ¸¸æˆæ—¶ç»™è¿™ä¸ªæ•°æ®æ— å…³
 //		*/
 //		UserDefault::getInstance()->setBoolForKey("onEffect",true);
 //	}
@@ -182,37 +184,37 @@ void StartScene::setMusic(Ref* sender)
 //		UserDefault::getInstance()->setBoolForKey("onEffect",false);
 //	}
 //}
-//ÓÎÏ·°ïÖú°´Å¥µÄ»Øµ÷
+//æ¸¸æˆå¸®åŠ©æŒ‰é’®çš„å›žè°ƒ
 void StartScene::helpLayer()
 {
-	//¹ØµômenuµÄµã»÷ÊÂ¼þ£¨false²»¿Éµã»÷£©
+	//å…³æŽ‰menuçš„ç‚¹å‡»äº‹ä»¶ï¼ˆfalseä¸å¯ç‚¹å‡»ï¼‰
 	menu->setEnabled(false);
 
-	//°ïÖú½çÃæ£¬°Ñ°ïÖúÃæ°åµÄ¾«Áé¼Óµ½ÓÎÏ·ÉèÖÃ²ãÉÏ£¬
+	//å¸®åŠ©ç•Œé¢ï¼ŒæŠŠå¸®åŠ©é¢æ¿çš„ç²¾çµåŠ åˆ°æ¸¸æˆè®¾ç½®å±‚ä¸Šï¼Œ
 	helpSp = Sprite::create("help_mianban.png");
 	helpSp->setPosition(Vec2(size.width/2,size.height/2-200));
 	this->addChild(helpSp);
 
-	//ÔÚ°ïÖú²ã£¬´´½¨Button£¨ÐèÒªÁ½¸öÍ¼Æ¬£©
+	//åœ¨å¸®åŠ©å±‚ï¼Œåˆ›å»ºButtonï¼ˆéœ€è¦ä¸¤ä¸ªå›¾ç‰‡ï¼‰
 	Button* okButton = Button::create("ok.png","ok.png");
 
-	//ButtonµÄ¼àÌý·½·¨£¬µã»÷button°´Å¥¾Í·µ»Øµ½ÓÎÏ·ÉèÖÃ½çÃæ
+	//Buttonçš„ç›‘å¬æ–¹æ³•ï¼Œç‚¹å‡»buttonæŒ‰é’®å°±è¿”å›žåˆ°æ¸¸æˆè®¾ç½®ç•Œé¢
 	okButton->addClickEventListener(CC_CALLBACK_0(StartScene::helpBack,this));
 	okButton->setPosition(Vec2(helpSp->getContentSize().width/2,100));
 	
-	//°Ñbutton°´Å¥Ìí¼Óµ½°ïÖúÃæ°å¾«ÁéÉÏ¡£
+	//æŠŠbuttonæŒ‰é’®æ·»åŠ åˆ°å¸®åŠ©é¢æ¿ç²¾çµä¸Šã€‚
 	helpSp->addChild(okButton);
 
-	//°ïÖúÃæ°åÔÚ0.8ÃëÄÚ´Ó×Ý×ø±ê100µÄÎ»ÖÃÒÆ¶¯µ½½çÃæµÄÖÐ¼äÎ»ÖÃ¡£
+	//å¸®åŠ©é¢æ¿åœ¨0.8ç§’å†…ä»Žçºµåæ ‡100çš„ä½ç½®ç§»åŠ¨åˆ°ç•Œé¢çš„ä¸­é—´ä½ç½®ã€‚
 	auto moveTo = MoveTo::create(0.5,Vec2(size.width/2,size.height/2));
 	helpSp->runAction(moveTo);
 }
-//°ïÖú½çÃæÖÐµÄok°´Å¥µÄ»Øµ÷º¯Êý£¬µã»÷Ôò·µ»Øµ½ÓÎÏ·ÉèÖÃ½çÃæ
+//å¸®åŠ©ç•Œé¢ä¸­çš„okæŒ‰é’®çš„å›žè°ƒå‡½æ•°ï¼Œç‚¹å‡»åˆ™è¿”å›žåˆ°æ¸¸æˆè®¾ç½®ç•Œé¢
 void StartScene::helpBack()
 {
-	//menuµã»÷ÊÂ¼þ¿ªÆô£¨true¿ªÆôµã»÷ÊÂ¼þ£©
+	//menuç‚¹å‡»äº‹ä»¶å¼€å¯ï¼ˆtrueå¼€å¯ç‚¹å‡»äº‹ä»¶ï¼‰
 	menu->setEnabled(true);
 
-	//°Ñ°ïÖú½çÃæ´Ó¸¸ÊÔÍ¼ÖÐÒÆ³ý£¬Ôò·µ»Øµ½ÓÎÏ·ÉèÖÃ½çÃæ
+	//æŠŠå¸®åŠ©ç•Œé¢ä»Žçˆ¶è¯•å›¾ä¸­ç§»é™¤ï¼Œåˆ™è¿”å›žåˆ°æ¸¸æˆè®¾ç½®ç•Œé¢
 	helpSp->removeFromParent();
 }

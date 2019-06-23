@@ -1,3 +1,6 @@
+ï»¿#pragma execution_character_set("utf-8")
+
+#include "QE.h"
 #include "Loading.h"
 #include "StartScene.h"
 #include "ui/CocosGUI.h"
@@ -6,33 +9,33 @@ using namespace ui;
 using namespace CocosDenshion;
 #include "Level.h"
 
-//´´½¨³¡¾°sceneºÍ²ãlayer
+//åˆ›å»ºåœºæ™¯sceneå’Œå±‚layer
 Scene * Loading::createScene()
 {
 	Scene * scene = Scene::create();
 	Layer * layer = Loading::create();
-	scene->addChild(layer); //½«²ãÌí¼Óµ½³¡¾°ÉÏ
-	return scene;  //·µ»ØÒ»¸ö´ø²ãµÄ³¡¾°
+	scene->addChild(layer); //å°†å±‚æ·»åŠ åˆ°åœºæ™¯ä¸Š
+	return scene;  //è¿”å›žä¸€ä¸ªå¸¦å±‚çš„åœºæ™¯
 }
-//½ø¶ÈÌõ
+//è¿›åº¦æ¡
 bool Loading::init()
 {
-	//³õÊ¼»¯¸¸ÀàµÄ¹¹Ôìº¯Êý£¬ÊÇµÄ»°¾Í²Ù×÷£¬·ñµÄ»°¾Íreturn false
+	//åˆå§‹åŒ–çˆ¶ç±»çš„æž„é€ å‡½æ•°ï¼Œæ˜¯çš„è¯å°±æ“ä½œï¼Œå¦çš„è¯å°±return false
 	if (!Layer::init())
 	{
 		return false;
 	}
 
-	Size size = Director::getInstance()->getWinSize();//»ñÈ¡ÆÁÄ»µÄ´óÐ¡
-	Sprite * bg = Sprite::create("bg1.png");//±³¾°
+	Size size = Director::getInstance()->getWinSize();//èŽ·å–å±å¹•çš„å¤§å°
+	Sprite * bg = Sprite::create("bg1.png");//èƒŒæ™¯
 
-	//ÈÃ±³¾°Í¼Æ¬ÓëÆÁÄ»ÊÊÅä
-	//autoÓëidµÄÇø±ð£ºautoÊÇÖÇÄÜÖ¸Õë£¬¿ÉÒÔ×Ô¶¯Ê¶±ðºóÃæ²ÎÊýµÄÀàÐÍ
+	//è®©èƒŒæ™¯å›¾ç‰‡ä¸Žå±å¹•é€‚é…
+	//autoä¸Židçš„åŒºåˆ«ï¼šautoæ˜¯æ™ºèƒ½æŒ‡é’ˆï¼Œå¯ä»¥è‡ªåŠ¨è¯†åˆ«åŽé¢å‚æ•°çš„ç±»åž‹
 	auto scaleX = size.width/bg->getContentSize().width;
 	auto scaleY = size.height/bg->getContentSize().height;
-	bg->setScale(scaleX,scaleY);//Ëõ·Å
-	bg->setPosition(Vec2(size.width/2,size.height/2));//ÉèÖÃÎ»ÖÃ
-	this->addChild(bg);//Ìí¼Ó¸¸ÊÔÍ¼
+	bg->setScale(scaleX,scaleY);//ç¼©æ”¾
+	bg->setPosition(Vec2(size.width/2,size.height/2));//è®¾ç½®ä½ç½®
+	this->addChild(bg);//æ·»åŠ çˆ¶è¯•å›¾
 
 	Label * up = Label::createWithSystemFont("Protect Animals","",40);
 	up->setPosition(Vec2(size.width/2,size.height/2));
@@ -40,25 +43,25 @@ bool Loading::init()
 	this->addChild(up);
 	
 
-	Sprite * timerSp = Sprite::create("loading.png");//´´½¨¾«Áé
-	ProgressTimer * timer = ProgressTimer::create(timerSp);//½ø¶ÈÌõ
-	timer->setPosition(Vec2(size.width/2-20,size.height/2-100));//ÉèÖÃÎ»ÖÃ
+	Sprite * timerSp = Sprite::create("loading.png");//åˆ›å»ºç²¾çµ
+	ProgressTimer * timer = ProgressTimer::create(timerSp);//è¿›åº¦æ¡
+	timer->setPosition(Vec2(size.width/2-20,size.height/2-100));//è®¾ç½®ä½ç½®
 	auto light=ParticleFlower::create();
 	light->setPosition(timer->getPosition());
 	this->addChild(light);
 	/*
-	setBarChangeRate(Vec2(1,0))ºÍsetMidpoint(Vec2(0,1))¹²Í¬¾ö¶¨ÉèÖÃ½ø¶ÈÌõµÄÕ¹¿ª·½Ïò:
-	µÚÒ»¸ö²ÎÊýÎª0±íÊ¾Ë®Æ½·½ÏòÃ»ÓÐÕ¹¿ªÐ§¹û£¬Îª1±íÊ¾Ë®Æ½·½ÏòÓÐÕ¹¿ªÐ§¹û£»
-	µÚ¶þ¸ö²ÎÊýÎª0±íÊ¾´¹Ö±·½ÏòÃ»ÓÐÕ¹¿ªÐ§¹û£¬Îª1±íÊ¾´¹Ö±·½ÏòÓÐÕ¹¿ªÐ§¹û¡£
-	(1,0):xÖá·½Ïò´Ó×óÏòÓÒÕ¹¿ª£»(0,1)´ÓÏÂÏòÉÏÕ¹¿ª£»£¨0,0£©Ã»ÓÐÕ¹¿ªÐ§¹û£»£¨1,1£©´Ó×óÏÂ½ÇÏòÓÒÏòÉÏÕ¹¿ª¡£
+	setBarChangeRate(Vec2(1,0))å’ŒsetMidpoint(Vec2(0,1))å…±åŒå†³å®šè®¾ç½®è¿›åº¦æ¡çš„å±•å¼€æ–¹å‘:
+	ç¬¬ä¸€ä¸ªå‚æ•°ä¸º0è¡¨ç¤ºæ°´å¹³æ–¹å‘æ²¡æœ‰å±•å¼€æ•ˆæžœï¼Œä¸º1è¡¨ç¤ºæ°´å¹³æ–¹å‘æœ‰å±•å¼€æ•ˆæžœï¼›
+	ç¬¬äºŒä¸ªå‚æ•°ä¸º0è¡¨ç¤ºåž‚ç›´æ–¹å‘æ²¡æœ‰å±•å¼€æ•ˆæžœï¼Œä¸º1è¡¨ç¤ºåž‚ç›´æ–¹å‘æœ‰å±•å¼€æ•ˆæžœã€‚
+	(1,0):xè½´æ–¹å‘ä»Žå·¦å‘å³å±•å¼€ï¼›(0,1)ä»Žä¸‹å‘ä¸Šå±•å¼€ï¼›ï¼ˆ0,0ï¼‰æ²¡æœ‰å±•å¼€æ•ˆæžœï¼›ï¼ˆ1,1ï¼‰ä»Žå·¦ä¸‹è§’å‘å³å‘ä¸Šå±•å¼€ã€‚
 	*/
 	timer->setBarChangeRate(Vec2(1,0));
-	timer->setMidpoint(Vec2(0,1));//ÉèÖÃ»ù×¼µã£¨Õ¹¿ªµÄ´Ó×ó±ß¿ªÊ¼£©
-	timer->setType(ProgressTimer::Type::BAR);//ÉèÖÃ½ø¶ÈÌõÀàÐÍ£¨ÌõÐÎ£©
-	timer->setPercentage(0);//ÉèÖÃ½ø¶ÈÌõ°Ù·Ö±È µ±Ç°ËùÏÔÊ¾µÄ
+	timer->setMidpoint(Vec2(0,1));//è®¾ç½®åŸºå‡†ç‚¹ï¼ˆå±•å¼€çš„ä»Žå·¦è¾¹å¼€å§‹ï¼‰
+	timer->setType(ProgressTimer::Type::BAR);//è®¾ç½®è¿›åº¦æ¡ç±»åž‹ï¼ˆæ¡å½¢ï¼‰
+	timer->setPercentage(0);//è®¾ç½®è¿›åº¦æ¡ç™¾åˆ†æ¯” å½“å‰æ‰€æ˜¾ç¤ºçš„
 	this->addChild(timer);
 
-	//1Ãë ÔË¶¯µ½100%
+	//1ç§’ è¿åŠ¨åˆ°100%
 	ProgressTo * progressTo = ProgressTo::create(3,100);
 	auto call = CallFunc::create(CC_CALLBACK_0(Loading::startScene,this));
 	auto sequene = Sequence::create(progressTo,call,NULL);
@@ -67,18 +70,18 @@ bool Loading::init()
 	Label * lable = Label::createWithSystemFont("Loading","",40);
 	lable->setPosition(Vec2(size.width/2-20,size.height/2-100));
 	this->addChild(lable);
+
+	Connect::connect();
+
 	return true;
-
-	
-
 }
-//½øÈë¿ªÊ¼ÓÎÏ·½çÃæ
+//è¿›å…¥å¼€å§‹æ¸¸æˆç•Œé¢
 void Loading::startScene()
 {
-	//ÉùÃ÷Ò»¸ö³¡¾°
+	//å£°æ˜Žä¸€ä¸ªåœºæ™¯
 	Scene * scene = StartScene::createScene();
-	//·­Ò³¶¯»­
+	//ç¿»é¡µåŠ¨ç”»
 	TransitionPageTurn * turn = TransitionPageTurn::create(1,scene,false);
-	//Ìæ»»³¡¾°
+	//æ›¿æ¢åœºæ™¯
 	Director::getInstance()->replaceScene(turn);
 }

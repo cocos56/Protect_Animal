@@ -151,21 +151,51 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\Connect.cpp" />
+    <ClCompile Include="..\Classes\gameScene.cpp" />
     <ClCompile Include="..\Classes\Level.cpp" />
     <ClCompile Include="..\Classes\Loading.cpp" />
+    <ClCompile Include="..\Classes\MessageSprite.cpp" />
     <ClCompile Include="..\Classes\NewLoseScene.cpp" />
     <ClCompile Include="..\Classes\NewWinScene.cpp" />
+    <ClCompile Include="..\Classes\QuickEngine\QAnimate.cpp" />
+    <ClCompile Include="..\Classes\QuickEngine\QEditBox.cpp" />
+    <ClCompile Include="..\Classes\QuickEngine\QJson.cpp" />
+    <ClCompile Include="..\Classes\QuickEngine\QMenu.cpp" />
+    <ClCompile Include="..\Classes\QuickEngine\QMessageBox.cpp" />
+    <ClCompile Include="..\Classes\QuickEngine\QObject.cpp" />
+    <ClCompile Include="..\Classes\QuickEngine\QScene.cpp" />
+    <ClCompile Include="..\Classes\QuickEngine\QSprite.cpp" />
+    <ClCompile Include="..\Classes\QuickEngine\QString.cpp" />
+    <ClCompile Include="..\Classes\QuickEngine\QTMX.cpp" />
     <ClCompile Include="..\Classes\StartScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
-    <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\Connect.h" />
+    <ClInclude Include="..\Classes\gameScene.h" />
     <ClInclude Include="..\Classes\Level.h" />
     <ClInclude Include="..\Classes\Loading.h" />
+    <ClInclude Include="..\Classes\MessageSprite.h" />
     <ClInclude Include="..\Classes\NewLoseScene.h" />
     <ClInclude Include="..\Classes\NewWinScene.h" />
+    <ClInclude Include="..\Classes\QE.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QAnimate.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QDesignMode.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QEditBox.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QFileUtils.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QJson.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QLayer.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QMenu.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QMessageBox.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QObject.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QScene.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QSprite.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QString.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QTMX.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QType.h" />
+    <ClInclude Include="..\Classes\QuickEngine\QuickEngine.h" />
     <ClInclude Include="..\Classes\StartScene.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>

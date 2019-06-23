@@ -1,3 +1,5 @@
+ï»¿#pragma execution_character_set("utf-8")
+
 #pragma once
 //#include "e:\cocosproject\hero\hero\cocos2d\cocos\2d\cclayer.h"
 #include "cocos2d.h"
@@ -6,10 +8,10 @@ using namespace cocos2d;
 class Loading : public Layer
 {
 public:
-	static Scene * createScene();//´´½¨³¡¾°£¨¾²Ì¬µÄÀà·½·¨£©
-    virtual bool init();//¹¹Ôìº¯Êı£¨¼Ì³Ğ×Ô¸¸Àà£¬virtualĞéº¯Êı£©
+	static Scene * createScene();//åˆ›å»ºåœºæ™¯ï¼ˆé™æ€çš„ç±»æ–¹æ³•ï¼‰
+    virtual bool init();//æ„é€ å‡½æ•°ï¼ˆç»§æ‰¿è‡ªçˆ¶ç±»ï¼Œvirtualè™šå‡½æ•°ï¼‰
 
-	//´´½¨layer£¨ºê¶¨Òå¡£ÀïÃæ´«µÄ²ÎÊıÊÇµ±Ç°µÄÀàÃû£©
+	//åˆ›å»ºlayerï¼ˆå®å®šä¹‰ã€‚é‡Œé¢ä¼ çš„å‚æ•°æ˜¯å½“å‰çš„ç±»åï¼‰
 	CREATE_FUNC(Loading);
 
 	void startScene();

@@ -1,20 +1,22 @@
+ï»¿#pragma execution_character_set("utf-8")
+
 #include "Level.h"
 #include "ui/cocosGUI.h"
 using namespace ui;
 #include  "StartScene.h"
 #include "SimpleAudioEngine.h"
-#include "HelloWorldScene.h"
+#include "gameScene.h"
 using namespace CocosDenshion;
 
 
 
-//´´½¨³¡¾°ºÍ²ã
+//åˆ›å»ºåœºæ™¯å’Œå±‚
 Scene *  SelectLevel::createScene()
 {
 	Scene * scene =Scene::create();
 	Layer *layer=SelectLevel::create();
-	scene->addChild(layer); //½«²ãÌí¼Óµ½³¡¾°ÉÏ
-	return scene; //Êä³öÒ»¸ö´ø²ãµÄ³¡¾°
+	scene->addChild(layer); //å°†å±‚æ·»åŠ åˆ°åœºæ™¯ä¸Š
+	return scene; //è¾“å‡ºä¸€ä¸ªå¸¦å±‚çš„åœºæ™¯
 }
 bool SelectLevel::init()
 {
@@ -33,10 +35,10 @@ bool SelectLevel::init()
 	backButton->addClickEventListener(CC_CALLBACK_0(SelectLevel::back,this));
 	addChild(backButton);
 
-	/*Ìí¼Ó3¸öÍ¼Æ¬°´Å¥£¬²¢°Ñ°´Å¥Ìí¼Óµ½node½ÚµãÖÐ£¬ÔÙ°Ñnode½Úµã¼Óµ½µ±Ç°²ãÖÐ£¬²¢ÈÃ½ÚµãÖ´ÐÐÌøÔ¾¶¯×÷£¬
-	ÉèÖÃtagµÄÄ¿µÄÊÇÎªÁËÔÚÖ´ÐÐ»Øµ÷Ê±Í¨¹ý»ñÈ¡tagÖµ£¬²¢°ÑËü±£´æµ½UserDefault.xmlÎÄ¼þÖÐ£¬
-	ÔÚµ÷ÓÃDirector::getInstance()->replaceScene(selectLevel::createScene());Éú³ÉÑ¡¹Ø³¡¾°Ê±£¬
-	´ÓUserDefault.xmlÎÄ¼þÖÐÈ¡³öÀ´£¬ÓÃÀ´Ñ¡ÔñÄ³Ò»¹ØµÄ³¡¾°¡£
+	/*æ·»åŠ 3ä¸ªå›¾ç‰‡æŒ‰é’®ï¼Œå¹¶æŠŠæŒ‰é’®æ·»åŠ åˆ°nodeèŠ‚ç‚¹ä¸­ï¼Œå†æŠŠnodeèŠ‚ç‚¹åŠ åˆ°å½“å‰å±‚ä¸­ï¼Œå¹¶è®©èŠ‚ç‚¹æ‰§è¡Œè·³è·ƒåŠ¨ä½œï¼Œ
+	è®¾ç½®tagçš„ç›®çš„æ˜¯ä¸ºäº†åœ¨æ‰§è¡Œå›žè°ƒæ—¶é€šè¿‡èŽ·å–tagå€¼ï¼Œå¹¶æŠŠå®ƒä¿å­˜åˆ°UserDefault.xmlæ–‡ä»¶ä¸­ï¼Œ
+	åœ¨è°ƒç”¨Director::getInstance()->replaceScene(selectLevel::createScene());ç”Ÿæˆé€‰å…³åœºæ™¯æ—¶ï¼Œ
+	ä»ŽUserDefault.xmlæ–‡ä»¶ä¸­å–å‡ºæ¥ï¼Œç”¨æ¥é€‰æ‹©æŸä¸€å…³çš„åœºæ™¯ã€‚
 	*/
 	auto node=Node::create();
 	node->setPosition(Vec2(size.width/2,size.height/2));
@@ -69,7 +71,7 @@ bool SelectLevel::init()
 	node->addChild(player3);
 	node->addChild(player4);
 	this->addChild(node);
-	//Ê±¼ä£¬Î»ÖÃ£¬¸ß¶È£¬´ÎÊý£¬²úÉúÌøÔ¾µÄ¶¯×÷
+	//æ—¶é—´ï¼Œä½ç½®ï¼Œé«˜åº¦ï¼Œæ¬¡æ•°ï¼Œäº§ç”Ÿè·³è·ƒçš„åŠ¨ä½œ
 	JumpTo *jumpTo=JumpTo::create(1,Vec2(size.width/2,size.height/2-20),50,2);
 	node->runAction(jumpTo);
 	return true;
@@ -86,10 +88,10 @@ void SelectLevel::goto_game(Ref *sender)
 	int a = button->getTag();
 	log("%d",a);
 	UserDefault::getInstance()->setIntegerForKey("cha",a);
-	Scene * scene=HelloWorld::createScene();
+	Scene * scene= gameScene::createScene();
 	Director::getInstance()->replaceScene(scene);
 	//int tag=button->getTag();
-	////ÕÂ½ÚÐÅÏ¢ÓÃµÄÒ²±È½ÏÉÙ£¬ËùÒÔ·Åµ½userdefault.xmlÖÐ,¶øÇÒÊý¾Ý²»ÐèÒªÐÞ¸Ä
+	////ç« èŠ‚ä¿¡æ¯ç”¨çš„ä¹Ÿæ¯”è¾ƒå°‘ï¼Œæ‰€ä»¥æ”¾åˆ°userdefault.xmlä¸­,è€Œä¸”æ•°æ®ä¸éœ€è¦ä¿®æ”¹
 	//UserDefault::getInstance()->setIntegerForKey("chapter",tag);
 	////Director::getInstance()->replaceScene(selectLevel::createScene());
 }

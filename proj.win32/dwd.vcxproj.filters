@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="QE">
+      <UniqueIdentifier>{a4883c21-9c85-4564-aa0d-ca3583136ebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="QE\QuickEngine">
+      <UniqueIdentifier>{5c0bfde6-b854-458c-bc31-a1a0871679c8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QuickEngine\QAnimate.cpp">
+      <Filter>QE\QuickEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QuickEngine\QEditBox.cpp">
+      <Filter>QE\QuickEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QuickEngine\QJson.cpp">
+      <Filter>QE\QuickEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QuickEngine\QMenu.cpp">
+      <Filter>QE\QuickEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QuickEngine\QMessageBox.cpp">
+      <Filter>QE\QuickEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QuickEngine\QObject.cpp">
+      <Filter>QE\QuickEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QuickEngine\QScene.cpp">
+      <Filter>QE\QuickEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QuickEngine\QSprite.cpp">
+      <Filter>QE\QuickEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QuickEngine\QString.cpp">
+      <Filter>QE\QuickEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QuickEngine\QTMX.cpp">
+      <Filter>QE\QuickEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Connect.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Level.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Loading.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MessageSprite.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NewLoseScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NewWinScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StartScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QAnimate.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QDesignMode.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QEditBox.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QFileUtils.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QJson.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QLayer.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QMenu.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QMessageBox.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QObject.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QScene.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QSprite.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QString.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QTMX.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QType.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QuickEngine\QuickEngine.h">
+      <Filter>QE\QuickEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QE.h">
+      <Filter>QE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Connect.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Level.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Loading.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MessageSprite.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NewLoseScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NewWinScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

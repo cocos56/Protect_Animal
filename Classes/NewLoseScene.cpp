@@ -1,5 +1,8 @@
+﻿#pragma execution_character_set("utf-8")
+
+#include "QE.h"
 #include "NewLoseScene.h"
-#include "HelloWorldScene.h"
+#include "gameScene.h"
 #include "Level.h"
 Scene* NewLoseScene::createScene()
 {
@@ -37,14 +40,14 @@ bool NewLoseScene::init()
 
 	auto dic = Dictionary::createWithContentsOfFile("text.xml");
 	auto str = (__String *)(dic->objectForKey("score"));
-	auto Notrecoverable = Label::createWithTTF(str->getCString(), "fonts/youyuan.ttf", 40);
+	auto Notrecoverable = Label::createWithTTF(str->getCString(), QE_Font, 40);
 	Notrecoverable->setPosition(Vec2(size.width / 2 -30, size.height / 2 +160));
 	Notrecoverable->setColor(Color3B(225, 225, 0));
 	this->addChild(Notrecoverable);
 
 	int score = UserDefault::getInstance()->getIntegerForKey("score_");
 	auto strsss = __String::createWithFormat("%d", score);
-	auto labls = Label::createWithTTF(strsss->getCString(), "fonts/youyuan.ttf", 40);
+	auto labls = Label::createWithTTF(strsss->getCString(), QE_Font, 40);
 	labls->setPosition(Vec2(size.width / 2 +30 , size.height / 2 + 160));
 	labls->setColor(Color3B(225, 225, 0));
 	this->addChild(labls);
@@ -53,7 +56,7 @@ bool NewLoseScene::init()
 }
 void NewLoseScene::repeat()
 {
-	Scene *scene = HelloWorld::createScene();
+	Scene *scene = gameScene::createScene();
 	Director::getInstance()->replaceScene(scene);
 }
 void NewLoseScene::menus()

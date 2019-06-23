@@ -1,3 +1,5 @@
+ï»¿#pragma execution_character_set("utf-8")
+
 #pragma once
 //#include "e:\cocosproject\hero\hero\cocos2d\cocos\2d\cclayer.h"
 #include "cocos2d.h"
@@ -14,10 +16,10 @@ public:
 	void helpLayer();
 	//void startAnimate();
 	void helpBack();
-	void setMusic(Ref* sender);//RefÀàÊÇËùÓĞÀàµÄ¸¸Àà
+	void setMusic(Ref* sender);//Refç±»æ˜¯æ‰€æœ‰ç±»çš„çˆ¶ç±»
 	void setBack();
 	void setEffect(Ref* sender);
-	void adjustVolumn(Ref * sender); //µ÷ÕûÒôÁ¿
+	void adjustVolumn(Ref * sender); //è°ƒæ•´éŸ³é‡
 
 private:
 	Size size;

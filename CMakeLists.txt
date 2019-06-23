@@ -49,21 +49,51 @@ endif()
 # add cross-platforms source files and header files 
 list(APPEND GAME_SOURCE
      Classes/AppDelegate.cpp
-     Classes/HelloWorldScene.cpp
+     Classes/Connect.cpp
+     Classes/gameScene.cpp
      Classes/Level.cpp
      Classes/Loading.cpp
+     Classes/MessageSprite.cpp
      Classes/NewLoseScene.cpp
      Classes/NewWinScene.cpp
      Classes/StartScene.cpp
+     Classes/QuickEngine/QAnimate.cpp
+     Classes/QuickEngine/QEditBox.cpp
+     Classes/QuickEngine/QJson.cpp
+     Classes/QuickEngine/QMenu.cpp
+     Classes/QuickEngine/QMessageBox.cpp
+     Classes/QuickEngine/QObject.cpp
+     Classes/QuickEngine/QScene.cpp
+     Classes/QuickEngine/QSprite.cpp
+     Classes/QuickEngine/QString.cpp
+     Classes/QuickEngine/QTMX.cpp
      )
 list(APPEND GAME_HEADER
      Classes/AppDelegate.h
-     Classes/HelloWorldScene.h
+     Classes/Connect.h
+     Classes/gameScene.h
      Classes/Level.h
      Classes/Loading.h
+     Classes/MessageSprite.h
      Classes/NewLoseScene.h
      Classes/NewWinScene.h
+     Classes/QE.h
      Classes/StartScene.h
+     Classes/QuickEngine/QAnimate.h
+     Classes/QuickEngine/QDesignMode.h
+     Classes/QuickEngine/QEditBox.h
+     Classes/QuickEngine/QFileUtils.h
+     Classes/QuickEngine/QJson.h
+     Classes/QuickEngine/QLayer.h
+     Classes/QuickEngine/QMenu.h
+     Classes/QuickEngine/QMessageBox.h
+     Classes/QuickEngine/QObject.h
+     Classes/QuickEngine/QScene.h
+     Classes/QuickEngine/QSprite.h
+     Classes/QuickEngine/QString.h
+     Classes/QuickEngine/QTMX.h
+     Classes/QuickEngine/QType.h
+     Classes/QuickEngine/QuickEngine.h
      )
 
 if(ANDROID)
