@@ -3,7 +3,7 @@ console.log("正在创建服务器")
 var ws = require("nodejs-websocket")
 
 {
-    let port = 56
+    let port = 5666
     var server = ws.createServer(function(conn){
         serverCallbackFunction(conn)
     }).listen(port)

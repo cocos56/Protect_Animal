@@ -3,7 +3,7 @@
 #include "Connect.h"
 
 WebSocket* Connect::_ws = nullptr;
-string Connect::_addr = "ws://127.0.0.1:56/";
+string Connect::_addr = "ws://10.6.32.1:5666/";
 
 QE_SINGLETON_CPP(Connect);
 

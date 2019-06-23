@@ -41,7 +41,7 @@ bool ButtonMenu::init()
    this->addChild(label_score_num_);
    //倒计时初始化
    time = 60;
-   countTimeLabel = Label::createWithTTF("60", QE_Font, 50);
+   countTimeLabel = Label::create("60", QE_Font, 50);
    countTimeLabel->setString("Time:20");
    countTimeLabel->setPosition(Vec2(visibleSize.width - 240, visibleSize.height - 30));
    countTimeLabel->setColor(Color3B(255, 255, 0));
@@ -86,7 +86,7 @@ bool gameScene::init()
 		int a  = UserDefault::getInstance()->getIntegerForKey("cha");
 		log("%d",a);
 		char uiLayerName[40];
-	    sprintf(uiLayerName,"Mymap%d.tmx",a);
+	    sprintf(uiLayerName,"mymap%d.tmx",a);
     //加载地图
 	   _tileMap =TMXTiledMap::create(uiLayerName);
 

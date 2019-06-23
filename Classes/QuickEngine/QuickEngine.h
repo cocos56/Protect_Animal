@@ -4,7 +4,7 @@
 /*
 Quick Engine模块
 
-QE V3.0 for ProtectAnimal
+QE V3.0 for Protect_Animal
 
 QE（Quick Engine，快速引擎）简介：
 基于Cocos2d-x 3.17.2、C++ 17构建，用来尽可能多地提升代码的复用性。
